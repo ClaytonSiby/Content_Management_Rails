@@ -1,0 +1,19 @@
+<h1>Welldone Soldier</h1>
+
+<%= 1 + 1 %>
+
+<br>
+
+<% target ="hello" %>
+
+<%= "Hello #{target}!" %><br>
+
+Page: <%= @page %><br />
+
+Page_Two: <%= params[:page] %><br>
+
+ID: <%= @id %><br>
+
+ID: <%= params[:id] %>
+
+<%= link_to("Back", { controller: 'demo', action: 'index' })%>

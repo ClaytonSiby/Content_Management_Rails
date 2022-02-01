@@ -1,1 +1,10 @@
 <h1>Hello World!</h1>
+
+<% @array.each do |item| %>
+  <p><%= item %>
+<% end %>
+
+<a href="/students/welldone">Welldone Page</a>
+
+<%= link_to("Welldone 2", { controller: 'students', action: 'welldone' })%>
+<%= link_to("Welldone With params", { controller: 'students', action: 'welldone', page: 2, id: 12 })%>

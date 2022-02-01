@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   get 'demo/index'
 
+  get 'demo/about'
+
+  get 'demo/contact'
+
   # default route
   get ':controller(/:action(/:id))'
 end
