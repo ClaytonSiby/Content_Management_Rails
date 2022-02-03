@@ -21,7 +21,7 @@
          <td class="actions">
             <%= link_to("Show", subject_path(subject), :class => 'actions show') %>
             <%= link_to("Edit", edit_subject_path(subject), :class => 'actions edit') %>
-            <%= link_to("Delete", "#", :class => 'actions delete') %>
+            <%= link_to("Delete", delete_subject_path(subject), :class => 'actions delete') %>
          </td>
        </tr>
     <% end %>
