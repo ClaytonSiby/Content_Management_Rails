@@ -5,25 +5,9 @@
 <div class="subjects new">
   <h2>Create Subject</h2>
   <%= form_for(@subject, :url => subjects_path, :method => "post") do |form| %>
-    <table summary="Subject form fields">
-      <tr>
-        <th>Name</th>
-        <td><%= form.text_field(:name) %></td>
-      </tr>
-
-      <tr>
-        <th>Position</th>
-        <td><%= form.text_field(:position) %></td>
-      </tr>
-
-      <tr>
-        <th>Visible</th>
-        <td><%= form.text_field(:visiblle) %></td>
-      </tr>
-
-      <div class="form-buttons">
-        <%= form.submit("Create Subject") %>
-      </div>
-    </table>
+    <%= render(:partial => 'form', :locals => { :form => form }) %>
+    <div class="form-buttons">
+      <%= form.submit("Create Subject") %>
+    </div>
   <% end %>
 </div>
