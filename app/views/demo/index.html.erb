@@ -6,5 +6,7 @@
 
 <a href="/students/welldone">Welldone Page</a>
 
-<%= link_to("Welldone 2", { controller: 'students', action: 'welldone' })%>
-<%= link_to("Welldone With params", { controller: 'students', action: 'welldone', page: 2, id: 12 })%>
+<p><%= link_to("Welldone 2", { controller: 'students', action: 'welldone' })%></p>
+<p><%= link_to("Welldone With params", { controller: 'students', action: 'welldone', page: 2, id: 12 })%></p>
+
+<p><%= link_to('All Subjects', subjects_path) %></p>
