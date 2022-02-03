@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_01_194239) do
+ActiveRecord::Schema.define(version: 2022_02_01_202424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pages", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.string "permalink"
+    t.boolean "visible"
+    t.text "context"
+    t.bigint "subject_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["subject_id"], name: "index_pages_on_subject_id"
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.boolean "visiblle"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -23,4 +43,5 @@ ActiveRecord::Schema.define(version: 2022_02_01_194239) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "pages", "subjects"
 end
