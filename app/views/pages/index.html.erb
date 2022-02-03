@@ -1,2 +1,30 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<div class="subjects index">
+  <h2>Pages</h2>
+
+  <p><%= link_to("Add New Page", new_page_path, :class => 'action new') %></p>
+
+  <table class="listing" summary="Subject list">
+    <tr class="header">
+      <th>Subject</th>
+      <th>Position</th>
+      <th>Page</th>
+      <th>Visible</th>
+      <th>Permalink</th>
+    </tr>
+
+    <% @pages.each do |page| %>
+       <tr>
+         <td><%= page.subject.name %></td>
+         <td><%= page.position %></td>
+         <td><%= page.name %></td>
+         <td class="center"><%= page.visible ? 'Yes' : 'No' %></td>
+         <td class="center"><%= page.permalink %></td>
+         <td class="actions">
+            <%= link_to("Show", page_path(page), :class => 'actions show') %>
+            <%= link_to("Edit", edit_page_path(page), :class => 'actions edit') %>
+            <%= link_to("Delete", delete_page_path(page), :class => 'actions delete') %>
+         </td>
+       </tr>
+    <% end %>
+  </table>
+</div>
